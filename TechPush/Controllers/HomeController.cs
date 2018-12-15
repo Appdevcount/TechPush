@@ -8,7 +8,11 @@ namespace TechPush.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Startup()
+        {
+            return View();
+        }
+        public ActionResult Arinthukol()
         {
             return View();
         }
