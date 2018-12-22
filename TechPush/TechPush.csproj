@@ -155,6 +155,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularTEST\3rdpartylicenses.txt" />
+    <Content Include="AngularTEST\favicon.ico" />
+    <Content Include="AngularTEST\index.html" />
+    <Content Include="AngularTEST\main.13f960d6a8f7041d6181.js" />
+    <Content Include="AngularTEST\polyfills.20ab2d163684112c2aba.js" />
+    <Content Include="AngularTEST\runtime.ec2944dd8b20ec099bf3.js" />
+    <Content Include="AngularTEST\styles.3ff695c00d717f2d2a11.css" />
     <Content Include="Areas\Arinthukol\Arinthukol\404-boxed.html" />
     <Content Include="Areas\Arinthukol\Arinthukol\404-rtl-boxed.html" />
     <Content Include="Areas\Arinthukol\Arinthukol\404-rtl.html" />
@@ -1670,6 +1677,7 @@
     <Content Include="Views\Home\Startup.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ANote\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Arinthukol\Controllers\" />
     <Folder Include="Areas\Arinthukol\Models\" />
