@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Arinthukol\ArinthukolAreaRegistration.cs" />
+    <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +163,9 @@
     <Content Include="AngularTEST\polyfills.20ab2d163684112c2aba.js" />
     <Content Include="AngularTEST\runtime.ec2944dd8b20ec099bf3.js" />
     <Content Include="AngularTEST\styles.3ff695c00d717f2d2a11.css" />
+    <Content Include="ANote\CommunitySite.txt" />
+    <Content Include="ANote\Common.txt" />
+    <Content Include="ANote\CMS.txt" />
     <Content Include="Areas\Arinthukol\Arinthukol\404-boxed.html" />
     <Content Include="Areas\Arinthukol\Arinthukol\404-rtl-boxed.html" />
     <Content Include="Areas\Arinthukol\Arinthukol\404-rtl.html" />
@@ -1648,6 +1652,7 @@
     <Content Include="Areas\Arinthukol\Arinthukol\forms\phpmailer\PHPMailerAutoload.php" />
     <Content Include="Areas\Arinthukol\Arinthukol\forms\phpmailer\VERSION" />
     <Content Include="Areas\Arinthukol\Arinthukol\sendmail.php" />
+    <Content Include="Areas\CMS\Views\web.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\techpush.in ftp.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -1677,11 +1682,13 @@
     <Content Include="Views\Home\Startup.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ANote\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Arinthukol\Controllers\" />
     <Folder Include="Areas\Arinthukol\Models\" />
     <Folder Include="Areas\Arinthukol\Views\Shared\" />
+    <Folder Include="Areas\CMS\Controllers\" />
+    <Folder Include="Areas\CMS\Models\" />
+    <Folder Include="Areas\CMS\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -1696,6 +1703,40 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TechPush.API\TechPush.API.csproj">
+      <Project>{ef917bf8-8954-4aa0-b3fe-a7eefef51080}</Project>
+      <Name>TechPush.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.BL\TechPush.BL.csproj">
+      <Project>{08a4d5c2-249c-426b-9f65-2bab4105c916}</Project>
+      <Name>TechPush.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.Common\TechPush.Common.csproj">
+      <Project>{291387b5-97d0-4589-959c-6cf74873a6af}</Project>
+      <Name>TechPush.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.Core\TechPush.Core.csproj">
+      <Project>{8b6bb9a5-c967-4839-80c4-ec24074a6b99}</Project>
+      <Name>TechPush.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.Infrastructure\TechPush.Infrastructure.csproj">
+      <Project>{ba7363a0-379d-475a-be4e-cac2be2ec073}</Project>
+      <Name>TechPush.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.Model\TechPush.Model.csproj">
+      <Project>{2ab0ea03-410d-4655-b85a-8c0cf48ef123}</Project>
+      <Name>TechPush.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.Repository\TechPush.Repository.csproj">
+      <Project>{fad6df00-4799-41fc-b4b3-5e15d55bfeea}</Project>
+      <Name>TechPush.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechPush.Services\TechPush.Services.csproj">
+      <Project>{44487e35-cf5e-4d7c-8697-ebf3469c6de0}</Project>
+      <Name>TechPush.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
