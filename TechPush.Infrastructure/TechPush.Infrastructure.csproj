@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CMS\BlogDBContext.cs" />
+    <Compile Include="CMS\BlogRepository.cs" />
+    <Compile Include="CMS\IBlogRepository.cs" />
     <Compile Include="Migrations\Blog\201812291715053_Initial.cs" />
     <Compile Include="Migrations\Blog\201812291715053_Initial.Designer.cs">
       <DependentUpon>201812291715053_Initial.cs</DependentUpon>

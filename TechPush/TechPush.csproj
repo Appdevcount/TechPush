@@ -149,6 +149,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Arinthukol\ArinthukolAreaRegistration.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
+    <Compile Include="Areas\CMS\Controllers\AdminController.cs" />
+    <Compile Include="Areas\CMS\Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1653,6 +1655,10 @@
     <Content Include="Areas\Arinthukol\Arinthukol\forms\phpmailer\VERSION" />
     <Content Include="Areas\Arinthukol\Arinthukol\sendmail.php" />
     <Content Include="Areas\CMS\Views\web.config" />
+    <Content Include="Areas\CMS\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CMS\Views\Blog\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Blog\AddCategory.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\techpush.in ftp.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -1686,9 +1692,8 @@
     <Folder Include="Areas\Arinthukol\Controllers\" />
     <Folder Include="Areas\Arinthukol\Models\" />
     <Folder Include="Areas\Arinthukol\Views\Shared\" />
-    <Folder Include="Areas\CMS\Controllers\" />
     <Folder Include="Areas\CMS\Models\" />
-    <Folder Include="Areas\CMS\Views\Shared\" />
+    <Folder Include="Areas\CMS\Views\Admin\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
