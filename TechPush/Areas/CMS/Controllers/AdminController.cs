@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TechPush.Core;
 using TechPush.Infrastructure.CMS;
+using TechPush.Model.CMS;
 
 namespace TechPush.Areas.CMS.Controllers
 {
@@ -44,11 +45,23 @@ namespace TechPush.Areas.CMS.Controllers
         }
         public ActionResult AddPost()
         {
-            return View();
+            PostViewModel pvm = new PostViewModel();
+            BlogDBContext dbctx = new BlogDBContext();
+
+            List<Tag> tgs= dbctx.Tags.ToList<Tag>();
+
+            TagViewModel tvm = new TagViewModel() { AvalableTags = tgs, SlectedTags= new List<Tag>()
+        };
+            pvm.Tag = tvm;
+
+
+        return View(pvm);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult AddPost(Post Post)
         {
+            Post.Description = HttpUtility.HtmlEncode(Post.Description);
             IBlogRepository.AddPost(Post);
             return View();
         }
