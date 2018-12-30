@@ -1,4 +1,4 @@
-namespace TechPush.Infrastructure.Migrations.Blog
+namespace TechPush.Infrastructure.Migrations.CMS
 {
     using System;
     using System.Data.Entity;
@@ -10,13 +10,7 @@ namespace TechPush.Infrastructure.Migrations.Blog
         public BlogConfig()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"Migrations\Blog";
-
-            //  enable-migrations  -MigrationsDirectory Migrations\Blog -ContextTypeName BlogDBContext 
-            //  Manually rename the config file 
-            //  Add-Migration -ConfigurationTypeName BlogConfig Initial
-
-            //  Update-Database -ConfigurationTypeName BlogConfig -script 
+            MigrationsDirectory = @"Migrations\CMS";
         }
 
         protected override void Seed(TechPush.Infrastructure.CMS.BlogDBContext context)

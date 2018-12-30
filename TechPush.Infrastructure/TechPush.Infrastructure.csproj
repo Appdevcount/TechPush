@@ -49,13 +49,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CMS\BlogDBContext.cs" />
-    <Compile Include="CMS\BlogRepository.cs" />
-    <Compile Include="CMS\IBlogRepository.cs" />
-    <Compile Include="Migrations\Blog\201812291715053_Initial.cs" />
-    <Compile Include="Migrations\Blog\201812291715053_Initial.Designer.cs">
-      <DependentUpon>201812291715053_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\CMS\201812301058206_Initial.cs" />
+    <Compile Include="Migrations\CMS\201812301058206_Initial.Designer.cs">
+      <DependentUpon>201812301058206_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Blog\Configuration.cs" />
+    <Compile Include="Migrations\CMS\BlogConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,8 +67,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\Blog\201812291715053_Initial.resx">
-      <DependentUpon>201812291715053_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\CMS\201812301058206_Initial.resx">
+      <DependentUpon>201812301058206_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

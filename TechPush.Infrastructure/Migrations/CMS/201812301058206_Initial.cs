@@ -1,4 +1,4 @@
-namespace TechPush.Infrastructure.Migrations.Blog
+namespace TechPush.Infrastructure.Migrations.CMS
 {
     using System;
     using System.Data.Entity.Migrations;

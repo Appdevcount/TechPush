@@ -1,1 +1,5 @@
-﻿
+﻿ //  enable-migrations  -MigrationsDirectory Migrations\CMS -ContextTypeName BlogDBContext 
+            //  Manually rename the config file 
+            //  Add-Migration -ConfigurationTypeName BlogConfig Initial
+
+            //  Update-Database -ConfigurationTypeName BlogConfig -script 

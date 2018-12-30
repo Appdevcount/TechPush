@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -150,7 +156,6 @@
     <Compile Include="Areas\Arinthukol\ArinthukolAreaRegistration.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
     <Compile Include="Areas\CMS\Controllers\AdminController.cs" />
-    <Compile Include="Areas\CMS\Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1657,8 +1662,10 @@
     <Content Include="Areas\CMS\Views\web.config" />
     <Content Include="Areas\CMS\Views\_ViewStart.cshtml" />
     <Content Include="Areas\CMS\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\CMS\Views\Blog\Index.cshtml" />
-    <Content Include="Areas\CMS\Views\Blog\AddCategory.cshtml" />
+    <Content Include="Areas\CMS\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Admin\AddCategory.cshtml" />
+    <Content Include="Areas\CMS\Views\Admin\AddTag.cshtml" />
+    <Content Include="Areas\CMS\Views\Admin\AddPost.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\techpush.in ftp.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -1693,7 +1700,6 @@
     <Folder Include="Areas\Arinthukol\Models\" />
     <Folder Include="Areas\Arinthukol\Views\Shared\" />
     <Folder Include="Areas\CMS\Models\" />
-    <Folder Include="Areas\CMS\Views\Admin\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
