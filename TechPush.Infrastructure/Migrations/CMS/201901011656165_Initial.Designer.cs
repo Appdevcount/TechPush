@@ -13,7 +13,7 @@ namespace TechPush.Infrastructure.Migrations.CMS
         
         string IMigrationMetadata.Id
         {
-            get { return "201812301058206_Initial"; }
+            get { return "201901011656165_Initial"; }
         }
         
         string IMigrationMetadata.Source

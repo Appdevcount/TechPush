@@ -61,6 +61,10 @@
       <Project>{ba7363a0-379d-475a-be4e-cac2be2ec073}</Project>
       <Name>TechPush.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TechPush.Model\TechPush.Model.csproj">
+      <Project>{2AB0EA03-410D-4655-B85A-8C0CF48EF123}</Project>
+      <Name>TechPush.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

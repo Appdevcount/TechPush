@@ -46,23 +46,53 @@ namespace TechPush.Areas.CMS.Controllers
         public ActionResult AddPost()
         {
             PostViewModel pvm = new PostViewModel();
-            BlogDBContext dbctx = new BlogDBContext();
+            //BlogDBContext dbctx = new BlogDBContext();
 
-            List<Tag> tgs= dbctx.Tags.ToList<Tag>();
+            //List<Tag> tgs= dbctx.Tags.ToList<Tag>();
 
-            TagViewModel tvm = new TagViewModel() { AvalableTags = tgs, SlectedTags= new List<Tag>()
-        };
-            pvm.Tag = tvm;
+        //    TagViewModel tvm = new TagViewModel() { AvalableTags = tgs, SlectedTags= new List<Tag>()
+        //};
+        //    pvm.Tag = tvm;
 
 
         return View(pvm);
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult AddPost(Post Post)
+        public ActionResult AddPost(PostViewModel Post)
         {
-            Post.Description = HttpUtility.HtmlEncode(Post.Description);
+            Post.Post.Description = HttpUtility.HtmlEncode(Post.Post.Description);
             IBlogRepository.AddPost(Post);
+            return View();
+        }
+        public ActionResult EditPost(int PostId)
+        {
+            PostViewModel pvm = new PostViewModel();
+            pvm.Post= IBlogRepository.Post(PostId);
+            pvm.Post.Description = HttpUtility.HtmlDecode(pvm.Post.Description);
+            pvm.Tag = new TagViewModel()
+            {
+                //AvalableTags = tgs,
+                SelectedTags = pvm.Post.Tags// new List<Tag>()
+        };
+
+                //BlogDBContext dbctx = new BlogDBContext();
+
+                //List<Tag> tgs= dbctx.Tags.ToList<Tag>();
+
+                //    TagViewModel tvm = new TagViewModel() { AvalableTags = tgs, SlectedTags= new List<Tag>()
+                //};
+                //    pvm.Tag = tvm;
+
+
+            return View(pvm);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult EditPost(PostViewModel Post)
+        {
+            Post.Post.Description = HttpUtility.HtmlEncode(Post.Post.Description);
+            IBlogRepository.EditPost(Post);
             return View();
         }
     }

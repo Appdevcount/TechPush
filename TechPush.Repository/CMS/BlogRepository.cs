@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechPush.Core;
+using TechPush.Model.CMS;
 
 namespace TechPush.Infrastructure.CMS
 {
@@ -743,6 +744,42 @@ namespace TechPush.Infrastructure.CMS
             return dbctx.Categories.ToList();
             ////throw new NotImplementedException();
         }
+        public Post Post(int id)
+        {
+            return dbctx.Posts.Find(id);
+            //throw new NotImplementedException();
+        }
+        //public TagViewModel GetTagModelForEdit(int id)
+        //{
+        //   return new TagViewModel()
+        //    {
+        //        //AvalableTags = tgs,
+        //        SelectedTags = dbctx..Find(id);
+        //};
+        //}
+
+        public void EditPost(Post post)
+        {
+            dbctx.Entry(post).State = System.Data.Entity.EntityState.Modified;
+            dbctx.SaveChanges();
+            //throw new NotImplementedException();
+        }
+        public void EditPost(PostViewModel post)//Additional
+        {
+            List<Tag> SelectedTags = new List<Tag>();
+            foreach ( string TagId in post.Tag.PostedTags)
+            {
+                SelectedTags.Add(dbctx.Tags.Find(Convert.ToInt16(TagId)));
+
+            }
+            Post P = post.Post;// new Post();
+            P.Tags = SelectedTags;
+
+
+            dbctx.Entry(P).State = System.Data.Entity.EntityState.Modified;
+            dbctx.SaveChanges();
+            //throw new NotImplementedException();
+        }
 
         public Category Category(string categorySlug)
         {
@@ -774,10 +811,10 @@ namespace TechPush.Infrastructure.CMS
             throw new NotImplementedException();
         }
 
-        public void EditPost(Post post)
-        {
-            throw new NotImplementedException();
-        }
+        //public void EditPost(Post post)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void EditTag(Tag tag)
         {
@@ -789,11 +826,6 @@ namespace TechPush.Infrastructure.CMS
             throw new NotImplementedException();
         }
 
-        public Post Post(int id)
-        {
-            return dbctx.Posts.Find(id);
-            //throw new NotImplementedException();
-        }
 
         public IList<Post> Posts(int pageNo, int pageSize)
         {

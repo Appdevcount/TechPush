@@ -31,6 +31,7 @@ namespace TechPush.Infrastructure.Migrations.CMS
                         Published = c.Boolean(nullable: false),
                         PostedOn = c.DateTime(nullable: false),
                         Modified = c.DateTime(),
+                        Shed = c.Boolean(nullable: false),
                         Category_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)

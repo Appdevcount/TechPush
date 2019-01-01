@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechPush.Core;
+using TechPush.Model.CMS;
 
 namespace TechPush.Infrastructure.CMS
 {
@@ -113,6 +114,7 @@ namespace TechPush.Infrastructure.CMS
         /// </summary>
         /// <param name="post"></param>
         void EditPost(Post post);
+        void EditPost(PostViewModel post);
 
         /// <summary>
         /// Delete the post permanently from database.

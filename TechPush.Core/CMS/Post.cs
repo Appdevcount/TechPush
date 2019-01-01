@@ -88,5 +88,10 @@ namespace TechPush.Core
         /// </summary>
         public virtual ICollection<Tag> Tags
         { get; set; }
+        /// <summary>
+        /// Shed column for POST and Comments for ignoring/deleting old/inappropriate messages 
+        /// </summary>
+        public bool  Shed
+        { get; set; }
     }
 }
