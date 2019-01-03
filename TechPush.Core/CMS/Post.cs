@@ -88,10 +88,33 @@ namespace TechPush.Core
         /// </summary>
         public virtual ICollection<Tag> Tags
         { get; set; }
+
         /// <summary>
         /// Shed column for POST and Comments for ignoring/deleting old/inappropriate messages 
         /// </summary>
         public bool  Shed
+        { get; set; }
+
+        /// <summary>
+        /// Region column for differentiating Region specific POST/Ads 
+        /// </summary>
+        [Required(ErrorMessage = "Region: Field is required")]
+        [StringLength(50, ErrorMessage = "Region: Region should not exceed 50 characters")]
+        public Region Region
+        { get; set; }
+
+        /// <summary>
+        /// Region column for differentiating Region specific POST/Ads 
+        /// </summary>
+        [Required(ErrorMessage = "Publisher: Field is required")]
+        [StringLength(50, ErrorMessage = "Publisher: Publisher should not exceed 50 characters")]
+        public string Publisher
+        { get; set; }
+
+        [Display(Name = "Mobile Number:")]
+        [Required(ErrorMessage = "Mobile Number is required.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
+        public string MobileNo
         { get; set; }
     }
 }

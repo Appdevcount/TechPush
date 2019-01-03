@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CMS\Advertiser.cs" />
+    <Compile Include="CMS\HotNews.cs" />
+    <Compile Include="CMS\Region.cs" />
     <Compile Include="CMS\Category.cs" />
     <Compile Include="CMS\Contact.cs" />
     <Compile Include="CMS\Post.cs" />

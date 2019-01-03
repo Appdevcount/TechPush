@@ -27,6 +27,9 @@ namespace TechPush.Core
         public string Description
         { get; set; }
 
+        public bool Enable
+        { get; set; }
+
         public virtual ICollection<Post> Posts
         { get; set; }
     }
