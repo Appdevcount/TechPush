@@ -1719,10 +1719,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TechPush.API\TechPush.API.csproj">
-      <Project>{ef917bf8-8954-4aa0-b3fe-a7eefef51080}</Project>
-      <Name>TechPush.API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TechPush.BL\TechPush.BL.csproj">
       <Project>{08a4d5c2-249c-426b-9f65-2bab4105c916}</Project>
       <Name>TechPush.BL</Name>

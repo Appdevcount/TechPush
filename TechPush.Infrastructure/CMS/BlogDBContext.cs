@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechPush.Core;
+using TechPush.Core.CMS;
 
 namespace TechPush.Infrastructure.CMS
 {
@@ -20,6 +21,9 @@ namespace TechPush.Infrastructure.CMS
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Post> Posts { get; set; }
         //public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Advertiser> Advertisers { get; set; }
+        public DbSet<HotNews> HotNews { get; set; }
+        public DbSet<Region> Regions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

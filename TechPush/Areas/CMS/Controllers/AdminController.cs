@@ -62,7 +62,7 @@ namespace TechPush.Areas.CMS.Controllers
         public ActionResult AddPost(PostViewModel Post)
         {
             Post.Post.Description = HttpUtility.HtmlEncode(Post.Post.Description);
-            IBlogRepository.AddPost(Post);
+            IBlogRepository.AddPost(Post.Post);
             return View();
         }
         public ActionResult EditPost(int PostId)

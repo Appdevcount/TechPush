@@ -53,6 +53,14 @@
     <Compile Include="Migrations\CMS\201901011656165_Initial.Designer.cs">
       <DependentUpon>201901011656165_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\CMS\201901031647557_NewEntities.cs" />
+    <Compile Include="Migrations\CMS\201901031647557_NewEntities.Designer.cs">
+      <DependentUpon>201901031647557_NewEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\CMS\201901031714466_ColumnRename.cs" />
+    <Compile Include="Migrations\CMS\201901031714466_ColumnRename.Designer.cs">
+      <DependentUpon>201901031714466_ColumnRename.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CMS\BlogConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +77,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\CMS\201901011656165_Initial.resx">
       <DependentUpon>201901011656165_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\CMS\201901031647557_NewEntities.resx">
+      <DependentUpon>201901031647557_NewEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\CMS\201901031714466_ColumnRename.resx">
+      <DependentUpon>201901031714466_ColumnRename.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

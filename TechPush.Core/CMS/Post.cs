@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 #endregion
 
 namespace TechPush.Core
@@ -100,6 +101,7 @@ namespace TechPush.Core
         /// </summary>
         [Required(ErrorMessage = "Region: Field is required")]
         [StringLength(50, ErrorMessage = "Region: Region should not exceed 50 characters")]
+        [Column( "RegionId")]
         public Region Region
         { get; set; }
 
