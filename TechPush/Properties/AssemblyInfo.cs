@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
 [assembly: AssemblyProduct("TechPush")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2018")]
+[assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("721ff37d-beb5-4bb5-b6fc-203de3be22b8")]
+[assembly: Guid("53326b1f-89ab-4194-9806-127a3fb67492")]
 
 // Version information for an assembly consists of the following four values:
 //
