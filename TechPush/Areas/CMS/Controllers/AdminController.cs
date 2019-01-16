@@ -46,23 +46,35 @@ namespace TechPush.Areas.CMS.Controllers
         public ActionResult AddPost()
         {
             PostViewModel pvm = new PostViewModel();
-            //BlogDBContext dbctx = new BlogDBContext();
+            BlogDBContext dbctx = new BlogDBContext();
 
-            //List<Tag> tgs= dbctx.Tags.ToList<Tag>();
+            List<Tag> tgs = dbctx.Tags.ToList<Tag>();
 
-        //    TagViewModel tvm = new TagViewModel() { AvalableTags = tgs, SlectedTags= new List<Tag>()
-        //};
-        //    pvm.Tag = tvm;
+            TagViewModel tvm = new TagViewModel()
+            {
+                AvalableTags = tgs,
+                SelectedTags = new List<Tag>(),
+                
+            };
+            pvm.Tag = tvm;
 
+            List<Region> Rgs = dbctx.Regions.ToList();
+            ViewBag.CityList = Rgs;
+            pvm.Regions = Rgs;
 
-        return View(pvm);
+            return View(pvm);
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult AddPost(PostViewModel Post)
+        public ActionResult AddPost(PostViewModel Postvm)
         {
-            Post.Post.Description = HttpUtility.HtmlEncode(Post.Post.Description);
-            IBlogRepository.AddPost(Post.Post);
+            Postvm.Post.Description = HttpUtility.HtmlEncode(Postvm.Post.Description);
+
+            BlogDBContext dbctx = new BlogDBContext();
+
+            Postvm.Post.Category = dbctx.Categories.FirstOrDefault();
+            Post p = Postvm.Post;
+            IBlogRepository.AddPost(p);
             return View();
         }
         public ActionResult EditPost(int PostId)
