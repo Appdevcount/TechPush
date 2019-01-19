@@ -11,7 +11,7 @@ namespace TechPush.Core
     {
 
         [Key]
-        public int Id
+        public int CategoryId
         { get; set; }
 
         [Required(ErrorMessage = "Category Name: Field is required")]

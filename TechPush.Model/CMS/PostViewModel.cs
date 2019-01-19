@@ -10,10 +10,13 @@ namespace TechPush.Model.CMS
 {
     public class PostViewModel
     {
+        public List<Category> Categories { get; set; }
+        public int Category { get; set; }
         public Post Post { get; set; }
         public List<Region> Regions { get; set; }
         public TagViewModel Tag { get; set; }
-        
+        public int Region { get; set; }
+
     }
     public class TagViewModel    
     {

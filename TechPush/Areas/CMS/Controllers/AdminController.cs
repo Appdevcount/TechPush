@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TechPush.Core;
+using TechPush.Infrastructure;
 using TechPush.Infrastructure.CMS;
 using TechPush.Model.CMS;
 
@@ -45,8 +46,15 @@ namespace TechPush.Areas.CMS.Controllers
         }
         public ActionResult AddPost()
         {
+
+            Helper H = new Helper();
+            H.seed();
+            //Category Subcategory ||| Region Neighborhood can be added as lvchnnai
+
             PostViewModel pvm = new PostViewModel();
             BlogDBContext dbctx = new BlogDBContext();
+
+            var d = dbctx.Posts.ToList();
 
             List<Tag> tgs = dbctx.Tags.ToList<Tag>();
 
@@ -59,8 +67,11 @@ namespace TechPush.Areas.CMS.Controllers
             pvm.Tag = tvm;
 
             List<Region> Rgs = dbctx.Regions.ToList();
-            ViewBag.CityList = Rgs;
+            //ViewBag.CityList = Rgs;
             pvm.Regions = Rgs;
+            List<Category> ctgs = dbctx.Categories.ToList();
+            //ViewBag.CityList = Rgs;
+            pvm.Categories = ctgs;
 
             return View(pvm);
         }
@@ -68,14 +79,48 @@ namespace TechPush.Areas.CMS.Controllers
         [ValidateInput(false)]
         public ActionResult AddPost(PostViewModel Postvm)
         {
+
+
             Postvm.Post.Description = HttpUtility.HtmlEncode(Postvm.Post.Description);
+            Post p;
+            using (BlogDBContext dbctx = new BlogDBContext())
+            {
+                //Postvm.Post.Category = dbctx.Categories.Find(Postvm.Category);
+                p = Postvm.Post;
+                //p.Region = dbctx.Regions.Find(Postvm.Region);
+                int[] ia = Postvm.Tag.PostedTags.Select(s => int.Parse(s)).ToArray();//Converting string ID array to integer ID Array
+                                                                                     //var d = dbctx.Tags.Where(x => ia.Contains(x.Id)).ToList();
+                List<Tag> tgs = dbctx.Tags.Where(x => ia.Contains(x.TagId)).ToList(); ;// dbctx.Tags.Where(x=>  Postvm.Tag.PostedTags.Select(s=>int.Parse(s)).ToArray().Contains(x.Id)).ToList();
+                //foreach(Tag t in tgs)
+                //{
+                    p.Tags=tgs;
 
-            BlogDBContext dbctx = new BlogDBContext();
+                //}
 
-            Postvm.Post.Category = dbctx.Categories.FirstOrDefault();
-            Post p = Postvm.Post;
+
+                //=========
+                List<Tag> tgsS = dbctx.Tags.ToList<Tag>();
+
+                TagViewModel tvm = new TagViewModel()
+                {
+                    AvalableTags = tgsS,
+                    SelectedTags = new List<Tag>(),
+
+                };
+                Postvm.Tag = tvm;
+
+                List<Region> Rgs = dbctx.Regions.ToList();
+                //ViewBag.CityList = Rgs;
+                Postvm.Regions = Rgs;
+                List<Category> ctgs = dbctx.Categories.ToList();
+                //ViewBag.CityList = Rgs;
+                Postvm.Categories = ctgs;
+
+            }
+
+
             IBlogRepository.AddPost(p);
-            return View();
+            return View(Postvm);
         }
         public ActionResult EditPost(int PostId)
         {

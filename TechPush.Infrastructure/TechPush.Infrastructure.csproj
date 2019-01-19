@@ -47,19 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="CMS\BlogDBContext.cs" />
-    <Compile Include="Migrations\CMS\201901011656165_Initial.cs" />
-    <Compile Include="Migrations\CMS\201901011656165_Initial.Designer.cs">
-      <DependentUpon>201901011656165_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\CMS\201901181531078_Initial.cs" />
+    <Compile Include="Migrations\CMS\201901181531078_Initial.Designer.cs">
+      <DependentUpon>201901181531078_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\CMS\201901031647557_NewEntities.cs" />
-    <Compile Include="Migrations\CMS\201901031647557_NewEntities.Designer.cs">
-      <DependentUpon>201901031647557_NewEntities.cs</DependentUpon>
+    <Compile Include="Migrations\CMS\201901181534267_Change.cs" />
+    <Compile Include="Migrations\CMS\201901181534267_Change.Designer.cs">
+      <DependentUpon>201901181534267_Change.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\CMS\201901031714466_ColumnRename.cs" />
-    <Compile Include="Migrations\CMS\201901031714466_ColumnRename.Designer.cs">
-      <DependentUpon>201901031714466_ColumnRename.cs</DependentUpon>
+    <Compile Include="Migrations\CMS\201901181553212_Change1.cs" />
+    <Compile Include="Migrations\CMS\201901181553212_Change1.Designer.cs">
+      <DependentUpon>201901181553212_Change1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\CMS\BlogConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,14 +75,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\CMS\201901011656165_Initial.resx">
-      <DependentUpon>201901011656165_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\CMS\201901181531078_Initial.resx">
+      <DependentUpon>201901181531078_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\CMS\201901031647557_NewEntities.resx">
-      <DependentUpon>201901031647557_NewEntities.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\CMS\201901181534267_Change.resx">
+      <DependentUpon>201901181534267_Change.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\CMS\201901031714466_ColumnRename.resx">
-      <DependentUpon>201901031714466_ColumnRename.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\CMS\201901181553212_Change1.resx">
+      <DependentUpon>201901181553212_Change1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

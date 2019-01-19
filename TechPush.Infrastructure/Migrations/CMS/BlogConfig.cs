@@ -4,6 +4,8 @@ namespace TechPush.Infrastructure.Migrations.CMS
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using TechPush.Core;
+    using TechPush.Infrastructure.CMS;
 
     internal sealed class BlogConfig : DbMigrationsConfiguration<TechPush.Infrastructure.CMS.BlogDBContext>
     {
@@ -19,6 +21,9 @@ namespace TechPush.Infrastructure.Migrations.CMS
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
         }
+        
+
     }
 }

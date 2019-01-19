@@ -716,7 +716,12 @@ namespace TechPush.Infrastructure.CMS
         //    throw new NotImplementedException();
         //}
 
-        BlogDBContext dbctx = new BlogDBContext();
+        BlogDBContext dbctx= new BlogDBContext();
+
+        //public BlogRepository(BlogDBContext _dbctx)
+        //{
+        //    dbctx = _dbctx;
+        //}
 
         public int AddCategory(Category category)
         {
@@ -727,7 +732,13 @@ namespace TechPush.Infrastructure.CMS
 
         public int AddPost(Post post)
         {
+            //st state of tags object to unchanged otherwise by default it will be added in tags table again as EF Behaviour
+            foreach(Tag t in post.Tags)
+            {
+                dbctx.Entry(t).State = System.Data.Entity.EntityState.Unchanged;
+            }
             dbctx.Posts.Add(post);
+            
             return dbctx.SaveChanges();
             //throw new NotImplementedException();
         }

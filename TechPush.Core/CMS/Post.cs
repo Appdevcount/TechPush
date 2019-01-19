@@ -15,7 +15,7 @@ namespace TechPush.Core
     {
         [Key]
         //[Required(ErrorMessage = "Id: Field is required")]
-        public int Id
+        public int PostId
         { get; set; }
 
         /// <summary>
@@ -77,6 +77,8 @@ namespace TechPush.Core
         /// </summary>
         public DateTime? Modified
         { get; set; }
+        public int CategoryId
+        { get; set; }
 
         /// <summary>
         /// The category to which the post belongs to.
@@ -96,12 +98,15 @@ namespace TechPush.Core
         public bool  Shed
         { get; set; }
 
+        public int RegionId
+        { get; set; }
+
         /// <summary>
         /// Region column for differentiating Region specific POST/Ads 
         /// </summary>
-        [Required(ErrorMessage = "Region: Field is required")]
-        [StringLength(50, ErrorMessage = "Region: Region should not exceed 50 characters")]
-        [Column( "RegionId")]
+        //[Required(ErrorMessage = "Region: Field is required")]
+        //[StringLength(50, ErrorMessage = "Region: Region should not exceed 50 characters")]
+        //[Column( "RegionId")]
         public Region Region
         { get; set; }
 

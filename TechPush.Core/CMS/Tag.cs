@@ -11,7 +11,7 @@ namespace TechPush.Core
     public class Tag
     {
         [Key]
-        public int Id
+        public int TagId
         { get; set; }
 
         [Required(ErrorMessage = "Tag Name: Field is required")]
